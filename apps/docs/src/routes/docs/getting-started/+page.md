@@ -47,7 +47,7 @@ How the string reaches your `<head>` depends on your stack:
 
 - [SvelteKit](/docs/recipes/sveltekit) — `<svelte:head>` and the `{@html}` assembly
 - [React & Next.js](/docs/recipes/react) — `dangerouslySetInnerHTML` in a server component
-- [Plain HTML & SSR](/docs/recipes/plain-html) — template strings, Hono, or any server renderer
+- [Plain HTML & SSR](/docs/recipes/plain-html) — template strings or any server renderer
 
 ## Check your work
 
