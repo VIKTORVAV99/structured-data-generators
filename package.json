@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "npm run build -w structured-data-generators && npm run dev -w docs",
     "build": "npm run build -w structured-data-generators && npm run build -w docs",
-    "check:ci": "npm run check -w structured-data-generators && npm run check:ci -w docs",
+    "check:ci": "npm run build -w structured-data-generators && npm run check -w structured-data-generators && npm run check:ci -w docs",
     "test": "npm test -w structured-data-generators",
     "lint": "oxlint",
     "format": "oxfmt",

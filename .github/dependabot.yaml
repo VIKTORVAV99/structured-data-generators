@@ -17,3 +17,7 @@ updates:
       time: "09:00"
       timezone: CET
     open-pull-requests-limit: 10
+    ignore:
+      # 4.7.5+ requires a dual typescript@6 + tsgo setup; unpin deliberately, not via bump PR
+      - dependency-name: "svelte-check"
+        versions: [">4.7.4"]
