@@ -47,7 +47,8 @@ How the string reaches your `<head>` depends on your stack:
 
 - [SvelteKit](/docs/recipes/sveltekit) — `<svelte:head>` and the `{@html}` assembly
 - [React & Next.js](/docs/recipes/react) — `dangerouslySetInnerHTML` in a server component
-- [Plain HTML & SSR](/docs/recipes/plain-html) — template strings or any server renderer
+
+Anywhere else, it's a plain string — interpolate it into whatever produces your HTML, exactly as in the serialize example above.
 
 ## Check your work
 
