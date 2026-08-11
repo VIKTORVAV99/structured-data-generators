@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const shikiHighlighter = await createHighlighter({
   themes: ["github-dark"],
-  langs: ["javascript", "typescript", "svelte", "html", "bash", "json"],
+  langs: ["javascript", "typescript", "tsx", "svelte", "html", "bash", "json"],
 });
 
 /** @type {import('@sveltejs/kit').Config} */

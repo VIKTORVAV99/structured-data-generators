@@ -32,6 +32,7 @@ export const NAV: NavSection[] = [
     label: "Recipes",
     links: [
       { title: "SvelteKit", path: "/docs/recipes/sveltekit" },
+      { title: "React & Next.js", path: "/docs/recipes/react" },
       { title: "Plain HTML & SSR", path: "/docs/recipes/plain-html" },
       { title: "Breadcrumbs", path: "/docs/recipes/breadcrumbs" },
       { title: "Person entity graph", path: "/docs/recipes/person-graph" },

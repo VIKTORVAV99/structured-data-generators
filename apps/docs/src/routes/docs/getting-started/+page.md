@@ -46,6 +46,7 @@ Pass an array instead of a single schema and the nodes are wrapped in a `@graph`
 How the string reaches your `<head>` depends on your stack:
 
 - [SvelteKit](/docs/recipes/sveltekit) — `<svelte:head>` and the `{@html}` assembly
+- [React & Next.js](/docs/recipes/react) — `dangerouslySetInnerHTML` in a server component
 - [Plain HTML & SSR](/docs/recipes/plain-html) — template strings, Hono, or any server renderer
 
 ## Check your work
