@@ -6,6 +6,7 @@
 Type-safe schema.org structured data factories and safe JSON-LD serialization for TypeScript.
 
 This is the development monorepo. For usage, see the
+[docs site](https://structured-data-generators-docs.viktorvav.workers.dev) or the
 [package README](packages/structured-data-generators/README.md) — the same document shown on
 [npm](https://www.npmjs.com/package/structured-data-generators).
 
