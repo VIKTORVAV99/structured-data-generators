@@ -35,7 +35,7 @@
     "build": "tsc -p tsconfig.build.json",
     "check": "tsc --noEmit",
     "test": "npm run build && node --test \"tests/**/*.test.ts\"",
-    "prepublishOnly": "rm -rf dist && npm run build && npx publint && npx @arethetypeswrong/cli --pack . --profile esm-only"
+    "prepublishOnly": "rm -rf dist && npm run build && npx publint && npm_config_dry_run=false npx @arethetypeswrong/cli --pack . --profile esm-only"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
