@@ -2,7 +2,7 @@
 
 Type-safe [schema.org](https://schema.org) structured data factories and safe JSON-LD serialization.
 
-**Docs:** [structured-data-generators-docs.viktorvav.workers.dev](https://structured-data-generators-docs.viktorvav.workers.dev)
+**Docs:** [structured-data-generators.viktorvav.workers.dev](https://structured-data-generators.viktorvav.workers.dev)
 
 - **Literal-typed factories** — `createPersonSchema(...)["@type"]` is the literal `"Person"`, not `string`, so graphs stay correct at compile time.
 - **Script-safe serializer** — `toJsonLd` escapes `<`, `>`, `&`, U+2028, and U+2029, so the output can be embedded in a `<script type="application/ld+json">` tag without breaking out of it.
