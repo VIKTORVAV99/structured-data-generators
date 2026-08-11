@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "ignorePatterns": ["**/dist/**", "**/build/**", "**/.svelte-kit/**", "**/.wrangler/**"],
+  "rules": {
+    "func-style": ["error", "expression"],
+    "arrow-body-style": ["error", "as-needed"],
+    "eqeqeq": ["error", "always", { "null": "ignore" }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "oxc/branches-sharing-code": "error",
+    "oxc/no-map-spread": "error",
+    "unicorn/prefer-array-flat-map": "error"
+  }
+}

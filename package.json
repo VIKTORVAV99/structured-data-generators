@@ -1,0 +1,30 @@
+{
+  "name": "structured-data-generators-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build -w structured-data-generators && npm run dev -w docs",
+    "build": "npm run build -w structured-data-generators && npm run build -w docs",
+    "check:ci": "npm run check -w structured-data-generators && npm run check:ci -w docs",
+    "test": "npm test -w structured-data-generators",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "deploy:docs": "npm run deploy -w docs"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "oxfmt": "^0.61.0",
+    "oxlint": "^1.78.0",
+    "publint": "^0.3.23",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.120.1"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

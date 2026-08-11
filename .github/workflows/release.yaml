@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # create the GitHub Release
+      id-token: write # mint the OIDC token for npm trusted publishing + provenance
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      # Trusted publishing requires npm >= 11.5.1; the runner-bundled npm can lag and
+      # an old npm fails with ENEEDAUTH instead of using OIDC.
+      - name: Update npm for OIDC trusted publishing
+        run: npm install -g npm@latest
+      - name: Verify tag matches package.json version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG="$(node -p "require('./packages/structured-data-generators/package.json').version")"
+          if [ "$TAG" != "$PKG" ]; then
+            echo "Tag v$TAG does not match package.json version $PKG" >&2
+            exit 1
+          fi
+      - name: Install dependencies
+        run: npm ci
+      - name: Test
+        run: npm test
+      # npm CLI, not `bun publish` or npx equivalents: authentication is the OIDC exchange
+      # against the npmjs.com trusted-publisher config bound to this repo + workflow file.
+      # Provenance is automatic under trusted publishing, but kept explicit so a silent
+      # fallback to no-provenance can never happen. prepublishOnly reruns build + publint + attw.
+      - name: Publish to npm
+        working-directory: packages/structured-data-generators
+        run: npm publish --provenance
+      - name: Create GitHub Release
+        run: gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

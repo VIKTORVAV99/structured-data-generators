@@ -1,0 +1,11 @@
+{
+  "name": "structured-data-generators-docs",
+  // Assets-only Worker: no "main" — every route is prerendered static HTML,
+  // and requests to static assets are free and unlimited.
+  "compatibility_date": "2026-08-01",
+  "assets": {
+    "directory": "build",
+    "not_found_handling": "404-page",
+  },
+  "preview_urls": true,
+}
