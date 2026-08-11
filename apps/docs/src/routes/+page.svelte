@@ -5,15 +5,15 @@
     createWebSiteSchema,
   } from "structured-data-generators";
   import DocsHead from "$lib/components/DocsHead.svelte";
-  import { NPM_URL, REPO_URL, SITE_NAME, SITE_URL } from "$lib/config";
+  import { AUTHOR_NAME, AUTHOR_URL, NPM_URL, REPO_URL, SITE_NAME, SITE_URL } from "$lib/config";
 
   const DESCRIPTION =
     "Type-safe schema.org structured data factories and safe JSON-LD serialization for TypeScript.";
 
   const author = createPersonSchema({
-    "@id": "https://viktor.andersson.tech/#person",
-    name: "Viktor Andersson",
-    url: "https://viktor.andersson.tech",
+    "@id": `${AUTHOR_URL}/#person`,
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
   });
 
   const structuredData = [

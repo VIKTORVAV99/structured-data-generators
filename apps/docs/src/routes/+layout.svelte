@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import { NPM_URL, REPO_URL, RELEASES_URL, SITE_NAME } from "$lib/config";
+  import { AUTHOR_NAME, AUTHOR_URL, NPM_URL, RELEASES_URL, REPO_URL, SITE_NAME } from "$lib/config";
   import "../app.css";
 
   let { children }: { children: Snippet } = $props();
@@ -31,7 +31,7 @@
   >
     <p>
       <a href="{REPO_URL}/blob/main/LICENSE" class="hover:text-accent">MIT</a>
-      · Viktor Andersson
+      · <a href={AUTHOR_URL} class="hover:text-accent">{AUTHOR_NAME}</a>
     </p>
     <p>
       <a href={RELEASES_URL} class="hover:text-accent">Changelog</a>
