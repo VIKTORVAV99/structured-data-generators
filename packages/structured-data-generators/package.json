@@ -1,6 +1,6 @@
 {
   "name": "structured-data-generators",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Type-safe schema.org structured data factories and safe JSON-LD serialization",
   "keywords": [
     "json-ld",
