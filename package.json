@@ -22,7 +22,7 @@
     "oxlint": "^1.78.0",
     "publint": "^0.3.23",
     "typescript": "^7.0.2",
-    "wrangler": "^4.120.1"
+    "wrangler": "^4.124.0"
   },
   "engines": {
     "node": ">=24"
